@@ -2,10 +2,11 @@ import json
 import os
 import tempfile
 
+DEFAULT_DB_FILE=os.path.join(tempfile.gettempdir(), "cli-db.json")
 
 class CliDb:
-    def __init__(self):
-        self._db_file = "/tmp/cli-db.json"  # TODO - make dynamic based on arguments
+    def __init__(self, db_file=DEFAULT_DB_FILE):
+        self._db_file = db_file
 
     def set(self, key, value):
         if not os.path.isfile(self._db_file):
