@@ -12,11 +12,18 @@ class CliDbTest(unittest.TestCase):
         if os.path.isfile(DB_FILE):
             os.remove(DB_FILE)
 
+    def tearDown(self):
+        if os.path.isfile(DB_FILE):
+            os.remove(DB_FILE)
+
+        if os.path.isfile(DB_FILE + ".lock"):
+            os.remove(DB_FILE + ".lock")
+
     def test_1(self):
         db = CliDb(DB_FILE)
         db.set("foo", "bar")
 
-        db = CliDb()
+        db = CliDb(DB_FILE)
         actual = db.get("foo")
 
         self.assertEquals("bar", actual, "value should be bar")
