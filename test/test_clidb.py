@@ -1,10 +1,8 @@
 import os
 import tempfile
 import unittest
-import sys
-import clidb
+
 from clidb.cli_db import CliDb
-import main
 
 
 DB_FILE = os.path.join(tempfile.gettempdir(), "_test_cli-db.json")

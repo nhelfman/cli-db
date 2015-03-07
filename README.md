@@ -7,15 +7,15 @@ Data is stored on the file system and concurrent access protection is done using
 Performance is predicted to be limited since for every read/write the whole database is locked.
 
 ```
-Usage: cli-db <set key value|get key|del key>
+Usage: python cli-db <set key value|get key|del key>
 ```
 
 Example:
 ```
-$ cli-db/main.py set foo bar
-$ cli-db/main get foo
+$ python cli-db set foo bar
+$ python cli-db get foo
 foo
-$ cli-db/main del foo
-$ cli-db/main get foo
+$ python cli-db del foo
+$ python cli-db get foo
 $
 ```
