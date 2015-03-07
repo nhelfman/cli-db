@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 from cli_db import CliDb
 
@@ -27,7 +28,9 @@ def main(args):
 
         db = CliDb()
         value = db.get(key)
-        print value
+        if value:
+            print value
+
         return 0
 
     elif command == "del":

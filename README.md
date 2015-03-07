@@ -6,14 +6,16 @@ Might be useful where a very light weight persistable state communication betwee
 Data is stored on the file system and concurrent access protection is done using simple file locking.
 Performance is predicted to be limited since for every read/write the whole database is locked.
 
-Usage:
 ```
-cli-db [--database my.db.json] <set|get> <value>
+Usage: cli-db <set key value|get key|del key>
 ```
 
 Example:
 ```
-$ cli-db set foo bar
-$ cli-db get foo
+$ cli-db/main.py set foo bar
+$ cli-db/main get foo
 foo
+$ cli-db/main del foo
+$ cli-db/main get foo
+$
 ```
