@@ -1,6 +1,6 @@
 # cli-db
 
-A stateless (no daemon) kay-value database that can be safely used from command line.
+A "no daemon" key-value database that can be safely used from command line from multiple concurrent processes.
 
 Might be useful where a very light weight persistable state communication between processes/scripts is need. 
 Data is stored on the file system and concurrent access protection is done using simple file locking.
