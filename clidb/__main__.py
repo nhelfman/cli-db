@@ -10,6 +10,7 @@ def usage():
 def main(args):
     if len(args) < 3:
         usage()
+        return 1
 
     command = args[1]
     if command == "set":
